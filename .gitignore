@@ -1,3 +1,12 @@
+# /を含まない行（fileなど）
+# .gitignore以下全サブディレクトリ下のこの名前のファイルを無視
+# 末尾以外にのみ/を含む行（/file, /path/to/file, path/to/fileなど）
+# .gitignoreが置いてあるディレクトリをカレントディレクトリとする相対パスで指定されるファイルを無視
+# 末尾だけ/な行（directory/など）
+# .gitignore以下全サブディレクトリ下のこの名前のディレクトリを無視
+# 末尾以外にも末尾にも/を含む行（/directory/, /path/to/directory/, path/to/directory/など）
+# .gitignoreが置いてあるディレクトリをカレントディレクトリとする相対パスで指定されるディレクトリを無視
+
 # mac
 .DS_Store
 
