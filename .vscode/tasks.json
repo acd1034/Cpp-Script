@@ -4,7 +4,7 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "build active file",
+      "label": "run active file",
       "type": "shell",
       "command": "clang++",
       "args": [
@@ -23,7 +23,6 @@
         "${workspaceFolder}/.vscode/input.txt",
         ";",
         "rm",
-        "-r",
         "${workspaceFolder}/a.out",
         "}",
       ],
@@ -43,20 +42,36 @@
       "type": "shell",
       "command": "clang++",
       "args": [
-        "-std=c++17",
-        "-g",
-        "-Wall",
-        "-pedantic",
+        "${file}",
         "-o",
         "${workspaceFolder}/a.out",
-        "${file}",
+        "-std=c++17",
+        "-Wall",
+        "-pedantic",
+        "-I",
+        "${workspaceFolder}/include",
       ],
       "group": "build",
       "presentation": {
         "echo": false,
-        "reveal": "always",
+        "reveal": "silent",
         "panel": "shared",
-        "clear": false,
+        "clear": true
+      }
+    },
+    {
+      "label": "clean after debug",
+      "type": "shell",
+      "command": "rm",
+      "args": [
+        "${workspaceFolder}/a.out"
+      ],
+      "group": "none",
+      "presentation": {
+        "echo": false,
+        "reveal": "silent",
+        "panel": "shared",
+        "clear": true
       }
     },
   ]
