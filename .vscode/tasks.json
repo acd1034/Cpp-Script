@@ -16,6 +16,8 @@
         "-pedantic",
         "-I",
         "${workspaceFolder}/include",
+        "-I",
+        "/Users/ryo/vcpkg/installed/x64-osx/include",
         "&&",
         "{",
         "${workspaceFolder}/a.out",
