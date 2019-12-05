@@ -11,7 +11,7 @@ namespace ns {
   } // namespace detail
   template <template <class...> class Op, class... Args>
   using is_detected = detail::is_detected_impl<void, Op, Args...>;
-  // range
+  // range adl未対応、detected_tを使えばいける
   namespace detail {
     template <class T>
     using std_begin_t = decltype(std::begin(std::declval<T>()));
@@ -32,7 +32,6 @@ template <class CharT,
 auto& operator<<(std::basic_ostream<CharT, Traits>& os, const R& r) {
   const char* dlm = "";
   for (const auto& x : r) os << std::exchange(dlm, " ") << x;
-  // os << std::endl;
   return os;
 }
 template <class CharT,
@@ -49,17 +48,6 @@ template <class T, class CharT, class Traits>
 void operator|(const T& t, std::basic_ostream<CharT, Traits>& os) {
   os << t << std::endl;
 }
-// constructorのadlはこうやるらしい
-template <typename It>
-struct X {
-  It i;
-  template <class R>
-  X(R&& r)
-    : i([&]() {
-        using std::begin;
-        return begin(r);
-      }()) {}
-};
 
 #include <list>
 int main() {

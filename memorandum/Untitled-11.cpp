@@ -1,5 +1,15 @@
 #include <bits/stdc++.h>
-
+// constructorのadlはこうやるらしい
+template <typename It>
+struct X {
+  It i;
+  template <class R>
+  X(R&& r)
+    : i([&]() {
+        using std::begin;
+        return begin(r);
+      }()) {}
+};
 struct base {
   virtual void say() { std::cout << "base\n"; }
   void introduce() { say(); }
