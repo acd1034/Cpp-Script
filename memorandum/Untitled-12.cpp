@@ -49,6 +49,17 @@ template <class T, class CharT, class Traits>
 void operator|(const T& t, std::basic_ostream<CharT, Traits>& os) {
   os << t << std::endl;
 }
+// constructorのadlはこうやるらしい
+template <typename It>
+struct X {
+  It i;
+  template <class R>
+  X(R&& r)
+    : i([&]() {
+        using std::begin;
+        return begin(r);
+      }()) {}
+};
 
 #include <list>
 int main() {
