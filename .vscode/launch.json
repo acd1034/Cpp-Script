@@ -9,15 +9,15 @@
       "type": "cppdbg",
       "request": "launch",
       "targetArchitecture": "x86_64",
-      "program": "${workspaceFolder}/a.out",
-      "args": [],
-      "stopAtEntry": false,
+      "program": "${fileDirname}/${fileBasenameNoExtension}",
+      "args": [
+        "<",
+        "${workspaceFolder}/.vscode/input.txt",
+      ],
       "cwd": "${workspaceFolder}",
-      "environment": [],
-      "externalConsole": false,
       "MIMode": "lldb",
-      "preLaunchTask": "build before debug",
-      "postDebugTask": "clean after debug",
+      "preLaunchTask": "build",
+      "postDebugTask": "clean",
     },
   ]
 }
