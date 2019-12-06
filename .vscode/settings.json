@@ -1,6 +1,7 @@
 {
   "C_Cpp.intelliSenseEngineFallback": "Enabled",
   "files.associations": {
+    ".clang-format": "yaml",
     "*.tcc": "cpp",
     "__bit_reference": "cpp",
     "__config": "cpp",
