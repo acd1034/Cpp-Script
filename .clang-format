@@ -1,28 +1,29 @@
-ColumnLimit: 100
-
-UseTab: Never
+# generals and indents
+BreakBeforeBraces: Attach
+ColumnLimit: 80
+CommentPragmas: '^'
+ConstructorInitializerIndentWidth: 2
+ContinuationIndentWidth: 2
 IndentWidth: 2
-AccessModifierOffset: 0
+UseTab: Never
+
+# language core
+FixNamespaceComments: true
+PointerAlignment: Left
+AlwaysBreakTemplateDeclarations: true
 NamespaceIndentation: All
 
-BreakBeforeBraces: Attach
-
-AlwaysBreakTemplateDeclarations: true
-BreakConstructorInitializers: BeforeColon
-ConstructorInitializerAllOnOneLineOrOnePerLine: true
+# for short description
+AlignConsecutiveAssignments: true
+AlignTrailingComments: true
+AllowAllParametersOfDeclarationOnNextLine: true
 AllowShortBlocksOnASingleLine: true
+AllowShortCaseLabelsOnASingleLine: true
 AllowShortFunctionsOnASingleLine: All
 AllowShortIfStatementsOnASingleLine: true
 AllowShortLoopsOnASingleLine: true
-
-PointerAlignment: Left
-AlignConsecutiveAssignments: true
-AlignTrailingComments: true
-
 BinPackArguments: false
 BinPackParameters: false
-ConstructorInitializerIndentWidth: 2
-ContinuationIndentWidth: 2
-FixNamespaceComments: true
-
-CommentPragmas: '^ NO-FORMAT:'
+BreakBeforeBinaryOperators: NonAssignment
+BreakConstructorInitializers: BeforeColon
+ConstructorInitializerAllOnOneLineOrOnePerLine: true

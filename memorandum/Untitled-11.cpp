@@ -17,7 +17,9 @@ struct base {
 struct derived : base {
   void say() override { std::cout << "derived\n"; }
 };
-template <typename T, std::enable_if_t<std::is_rvalue_reference_v<T&&>, std::nullptr_t> = nullptr>
+template <
+  typename T,
+  std::enable_if_t<std::is_rvalue_reference_v<T&&>, std::nullptr_t> = nullptr>
 void f(T&& t) {
   std::cout << "T&&\n";
 }

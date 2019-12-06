@@ -7,9 +7,9 @@ ostream& operator<<(ostream& os, const vector<T>& v) {
   return os;
 }
 struct Graph {
-  using seen_t = uint64_t;
-  using ver_t = size_t;
-  using edge_t = pair<size_t, ver_t>;
+  using seen_t    = uint64_t;
+  using ver_t     = size_t;
+  using edge_t    = pair<size_t, ver_t>;
   const seen_t NO = 1e18;
   vector<seen_t> seen;
   vector<vector<edge_t>> edge;

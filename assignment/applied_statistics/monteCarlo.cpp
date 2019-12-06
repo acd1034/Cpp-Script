@@ -17,11 +17,11 @@ std::ostream& operator<<(std::ostream& os, const std::array<T, N>& a) {
 }
 
 class Game {
-  private:
+private:
   std::array<int, 52> a;
   std::mt19937 engine{std::random_device{}()};
 
-  public:
+public:
   Game() {
     std::iota(std::begin(a), std::end(a), 0);
     for (auto&& x : a) x /= 4;
