@@ -137,7 +137,7 @@ namespace ns {
     const_reference operator[](size_type i) const { return storage[i]; }
     size_type size() const { return N; }
     // iterator
-    // TODO:この実装がbestか？
+    // この実装がbestか？
     using iterator       = array_iterator<self>;
     using const_iterator = array_const_iterator<self>;
     iterator begin() { return iterator(*this, 0); }
