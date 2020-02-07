@@ -4,7 +4,14 @@
     "editor.selectionBackground": "#503010",
     "minimap.selectionHighlight": "#503010",
   },
-  "C_Cpp.updateChannel": "Default",
+  "todo-tree.highlights.defaultHighlight": {
+    "foreground": "black",
+    "background": "yellow",
+    "iconColour": "yellow",
+  },
+  "editor.rulers": [
+    80,
+  ],
   "editor.detectIndentation": false,
   "editor.fontSize": 13.5,
   "editor.formatOnSave": true,
@@ -17,23 +24,19 @@
   "explorer.confirmDragAndDrop": false,
   "explorer.sortOrder": "type",
   "extensions.ignoreRecommendations": true,
+  "files.autoSave": "onFocusChange",
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,
+  "git.confirmSync": false,
   "terminal.integrated.copyOnSelection": true,
   "terminal.integrated.rendererType": "dom",
   "workbench.fontAliasing": "antialiased",
   "workbench.iconTheme": "material-icon-theme",
-  "workbench.startupEditor": "none",
-  // experimental
-  "files.autoSave": "onFocusChange",
-  "todo-tree.highlights.defaultHighlight": {
-    "foreground": "black",
-    "background": "yellow",
-    "iconColour": "yellow",
-  },
-  "editor.rulers": [
-    80,
-  ],
+  "workbench.settings.editor": "json",
   "workbench.settings.useSplitJSON": true,
+  "workbench.startupEditor": "none",
+  // extensions
+  "C_Cpp.updateChannel": "Default",
+  // experimental
 }
