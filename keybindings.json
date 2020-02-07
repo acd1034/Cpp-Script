@@ -1,0 +1,44 @@
+// 既定値を上書きするには、このファイル内にキー バインドを挿入します
+[
+  {
+    "key": "cmd+2",
+    "command": "workbench.action.nextEditor"
+  },
+  {
+    "key": "cmd+3",
+    "command": "workbench.action.previousEditor"
+  },
+  {
+    "key": "ctrl+2",
+    "command": "workbench.action.focusNextGroup"
+  },
+  {
+    "key": "ctrl+3",
+    "command": "workbench.action.focusPreviousGroup"
+  },
+  {
+    "key": "cmd+e",
+    "command": "workbench.action.navigateBack"
+  },
+  {
+    "key": "cmd+e",
+    "command": "workbench.action.quickInputBack",
+    "when": "inQuickOpen"
+  },
+  {
+    "key": "shift+4",
+    "command": "editor.action.insertSnippet",
+    "when": "editorLangId == latex && editorTextFocus",
+    "args": {
+      "snippet": "$${TM_SELECTED_TEXT}${0}$"
+    }
+  },
+  {
+    "key": "ctrl+,",
+    "command": "editor.action.insertSnippet",
+    "when": "editorLangId == cpp && editorTextFocus",
+    "args": {
+      "snippet": "<${TM_SELECTED_TEXT}${0}>"
+    }
+  }
+]

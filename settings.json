@@ -32,4 +32,8 @@
     "background": "yellow",
     "iconColour": "yellow",
   },
+  "editor.rulers": [
+    80,
+  ],
+  "workbench.settings.useSplitJSON": true,
 }

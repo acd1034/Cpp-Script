@@ -1,0 +1,28 @@
+{
+  "main": {
+    "prefix": "main",
+    "body": [
+      "#include <iostream>",
+      "int main(){",
+      "  $0",
+      "}",
+      ""
+    ]
+  },
+  "cout": {
+    "prefix": "cout",
+    "body": "std::cout << $0 << std::endl;"
+  },
+  "temp": {
+    "prefix": "temp",
+    "body": "template <typename T$0>"
+  },
+  "enable": {
+    "prefix": "enable",
+    "body": "enable_if_t<$0> = nullptr"
+  },
+  "senable": {
+    "prefix": "senable",
+    "body": "std::enable_if_t<$0, std::nullptr_t> = nullptr"
+  }
+}

@@ -3,9 +3,6 @@
     {
       "name": "Mac",
       "browse": {
-        "path": [
-          "${workspaceFolder}"
-        ],
         "limitSymbolsToIncludedHeaders": true
       },
       "includePath": [
