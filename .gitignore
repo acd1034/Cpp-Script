@@ -7,9 +7,6 @@
 # 末尾以外にも末尾にも/を含む行（/directory/, /path/to/directory/, path/to/directory/など）
 # .gitignoreが置いてあるディレクトリをカレントディレクトリとする相対パスで指定されるディレクトリを無視
 
-# mac
 .DS_Store
-
-# vscode
 .vscode/ipch/
-.vscode/input.txt
+/input

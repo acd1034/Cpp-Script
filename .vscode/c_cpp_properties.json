@@ -6,7 +6,7 @@
         "limitSymbolsToIncludedHeaders": true
       },
       "includePath": [
-        "${workspaceFolder}/**",
+        "${workspaceFolder}",
         "${workspaceFolder}/include",
         "/Users/ryo/vcpkg/installed/x64-osx/include"
       ],
