@@ -4,11 +4,6 @@
     "editor.selectionBackground": "#503010",
     "minimap.selectionHighlight": "#503010",
   },
-  "todo-tree.highlights.defaultHighlight": {
-    "foreground": "black",
-    "background": "yellow",
-    "iconColour": "yellow",
-  },
   "editor.rulers": [
     80,
   ],
@@ -18,25 +13,38 @@
   "editor.minimap.renderCharacters": false,
   "editor.multiCursorModifier": "ctrlCmd",
   "editor.renderWhitespace": "boundary",
+  "editor.suggestSelection": "recentlyUsed",
   "editor.tabSize": 2,
   "editor.trimAutoWhitespace": false,
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "explorer.sortOrder": "type",
-  "extensions.ignoreRecommendations": true,
   "files.autoSave": "onFocusChange",
+  "files.defaultLanguage": "${activeEditorLanguage}",
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,
-  "git.confirmSync": false,
   "terminal.integrated.copyOnSelection": true,
   "terminal.integrated.rendererType": "dom",
+  "terminal.integrated.rightClickBehavior": "copyPaste",
+  "workbench.editor.limit.enabled": true,
   "workbench.fontAliasing": "antialiased",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.settings.editor": "json",
   "workbench.settings.useSplitJSON": true,
   "workbench.startupEditor": "none",
   // extensions
+  "extensions.ignoreRecommendations": true,
+  "git.confirmSync": false,
   "C_Cpp.updateChannel": "Default",
+  "todo-tree.highlights.defaultHighlight": {
+    "foreground": "black",
+    "background": "yellow",
+    "iconColour": "yellow",
+  },
   // experimental
+  "[plaintext]": {
+    "editor.quickSuggestions": false,
+    "editor.wordWrap": "on",
+  }
 }
