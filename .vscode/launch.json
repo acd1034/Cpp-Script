@@ -6,18 +6,12 @@
   "configurations": [
     {
       "name": "(lldb) Launch",
-      "type": "cppdbg",
+      "type": "lldb",
       "request": "launch",
-      "targetArchitecture": "x86_64",
-      "program": "${fileDirname}/${fileBasenameNoExtension}",
-      "args": [
-        "<",
-        "${workspaceFolder}/.vscode/input.txt",
-      ],
-      "cwd": "${workspaceFolder}",
-      "MIMode": "lldb",
-      "preLaunchTask": "build",
-      "postDebugTask": "clean",
-    },
+      "program": "${workspaceFolder}/build/a.out",
+      "args": [],
+      "cwd": "${workspaceFolder}/build",
+      // "preLaunchTask": "clang++ Debug",
+    }
   ]
 }

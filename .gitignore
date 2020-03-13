@@ -9,4 +9,5 @@
 
 .DS_Store
 .vscode/ipch/
-/input
+input
+build/

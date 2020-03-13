@@ -1,103 +1,78 @@
 {
-  // See https://go.microsoft.com/fwlink/?LinkId=733558
-  // for the documentation about the tasks.json format
-  "version": "2.0.0",
+  // https://go.microsoft.com/fwlink/?LinkId=733558
+  // https://code.visualstudio.com/docs/editor/variables-reference
   "tasks": [
     {
-      "label": "build and run",
-      "type": "shell",
-      "dependsOn": [
-        "build",
-        "run",
-        "clean"
-      ],
-      "dependsOrder": "sequence",
-      "group": {
-        "kind": "build",
-        "isDefault": true
-      }
-    },
-    {
-      "label": "build and run2",
-      "type": "shell",
-      "dependsOn": [
-        "build",
-        "run2",
-        "clean"
-      ],
-      "dependsOrder": "sequence",
-      "group": "build"
-    },
-    {
-      "label": "build",
-      "type": "shell",
+      "label": "clang++ Debug",
       "command": "clang++",
       "args": [
         "${file}",
-        "-o",
-        "${fileDirname}/${fileBasenameNoExtension}",
-        "-std=c++17",
-        "-Weverything",
-        "-Wno-c++98-compat-pedantic",
-        "-Wc++98-c++11-c++14-c++17-compat-pedantic",
-        "-Wno-missing-prototypes",
-        "-Wno-shadow-field-in-constructor",
-        "-Wno-shadow-uncaptured-local",
-        "-I${fileDirname}",
+        "-g",
+        "-O0",
+        "-std=c++2a",
+        "-Wall",
+        "-Wextra",
+        "-pedantic",
         "-I${workspaceFolder}/include",
-        "-I/Users/ryo/vcpkg/installed/x64-osx/include",
-      ],
+        "-I/Users/ryo/vcpkg/installed/x64-osx/include"
+      ]
+    },
+    {
+      "label": "g++ Debug",
+      "command": "/usr/local/Cellar/gcc/9.2.0_3.reinstall/bin/g++-9",
+      "args": [
+        "${file}",
+        "-g",
+        "-O0",
+        "-std=c++2a",
+        "-Wall",
+        "-Wextra",
+        "-pedantic",
+        "-I${workspaceFolder}/include",
+        "-I/Users/ryo/vcpkg/installed/x64-osx/include"
+      ]
+    },
+    {
+      "label": "clang++ Run",
+      "command": "./a.out",
+      "dependsOn": "clang++ Debug",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
       "presentation": {
-        "clear": true,
-        "echo": false,
-        "panel": "shared",
-        "showReuseMessage": false
+        "reveal": "always",
+        "showReuseMessage": true
       }
     },
     {
-      "label": "run",
-      "type": "shell",
-      "command": "${fileDirname}/${fileBasenameNoExtension}",
-      "args": [
-        "<",
-        "${workspaceFolder}/.vscode/input.txt",
-      ],
+      "label": "g++ Run",
+      "command": "./a.out",
+      "dependsOn": "g++ Debug",
       "presentation": {
-        "echo": false,
-        "panel": "shared",
-        "showReuseMessage": false
-      }
-    },
-    {
-      "label": "run2",
-      "type": "shell",
-      "command": "rm",
-      "args": [
-        "${fileDirname}/${fileBasenameNoExtension}.txt",
-        ";",
-        "${fileDirname}/${fileBasenameNoExtension}",
-        "<",
-        "${workspaceFolder}/.vscode/input.txt",
-        ">",
-        "${fileDirname}/${fileBasenameNoExtension}.txt",
-      ],
-      "presentation": {
-        "echo": false,
-        "panel": "shared",
-        "showReuseMessage": false
+        "reveal": "always",
+        "showReuseMessage": true
       }
     },
     {
       "label": "clean",
-      "type": "shell",
       "command": "rm",
       "args": [
-        "${fileDirname}/${fileBasenameNoExtension}",
-      ],
-      "presentation": {
-        "echo": false,
-        "panel": "shared"
-      }
+        "-r",
+        "*"
+      ]
     },
-  ]
+  ],
+  "type": "shell",
+  "options": {
+    "cwd": "${workspaceFolder}/build"
+  },
+  "problemMatcher": "$gcc",
+  "presentation": {
+    "clear": true,
+    "echo": false,
+    "reveal": "silent",
+    "showReuseMessage": false,
+  },
+  "version": "2.0.0",
 }
