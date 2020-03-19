@@ -19,7 +19,7 @@
     },
     {
       "label": "g++ Debug",
-      "command": "/usr/local/Cellar/gcc/9.2.0_3.reinstall/bin/g++-9",
+      "command": "g++-9",
       "args": [
         "${file}",
         "-g",
