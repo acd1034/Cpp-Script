@@ -1,0 +1,77 @@
+{
+  // python
+  "editor.suggestSelection": "first",
+  "python.jediEnabled": false,
+  "python.pythonPath": "/Users/ryo/.pyenv/versions/pythtb/bin/python",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "[python]": {
+    "editor.tabSize": 4
+  },
+  "files.associations": {
+    "matplotlibrc": "yaml"
+  },
+  // latex
+  "[latex]": {
+    "editor.formatOnSave": false,
+    "editor.wordWrap": "on"
+  },
+  "latex-workshop.latex.autoBuild.run": "never",
+  "latex-workshop.latex.outDir": "./build",
+  "latex-workshop.message.error.show": false,
+  "latex-workshop.message.update.show": false,
+  "latex-workshop.synctex.afterBuild.enabled": true,
+  "latex-workshop.view.pdf.viewer": "tab",
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": "constant.character.math.tex",
+        "settings": {
+          "foreground": "#e4b953"
+        }
+      },
+      {
+        "scope": "constant.other.general.math.tex",
+        "settings": {
+          "foreground": "#e4b953"
+        }
+      },
+      {
+        "scope": "constant.other.math.tex",
+        "settings": {
+          "foreground": "#e4b953"
+        }
+      }
+    ]
+  },
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "latexmk",
+      "tools": [
+        "latexmk"
+      ]
+    }
+  ],
+  "latex-workshop.latex.tools": [
+    {
+      "name": "latexmk",
+      "command": "latexmk",
+      "args": [
+        "-e",
+        "$latex=q/uplatex %O -synctex=1 -interaction=nonstopmode -file-line-error %S/",
+        "-e",
+        "$bibtex=q/upbibtex %O %B/",
+        "-e",
+        "$biber=q/biber %O --bblencoding=utf8 -u -U --output_safechars %B/",
+        "-e",
+        "$makeindex=q/upmendex %O -o %D %S/",
+        "-e",
+        "$dvipdf=q/dvipdfmx %O -o %D %S/",
+        "-e",
+        "$out_dir='build'",
+        "-norc",
+        "-pdfdvi",
+        "%DOC%"
+      ]
+    }
+  ]
+}

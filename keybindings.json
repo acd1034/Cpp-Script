@@ -25,11 +25,16 @@
     "when": "inQuickOpen"
   },
   {
+    "key": "cmd+alt+B",
+    "command": "workbench.action.tasks.runTask",
+    "when": "editorLangId != latex"
+  },
+  {
     "key": "shift+4",
     "command": "editor.action.insertSnippet",
     "when": "editorTextFocus && editorLangId == latex",
     "args": {
-      "snippet": "$${TM_SELECTED_TEXT}${0}$"
+      "snippet": "$${TM_SELECTED_TEXT}$0$"
     }
   },
   {
@@ -37,20 +42,15 @@
     "command": "editor.action.insertSnippet",
     "when": "editorTextFocus",
     "args": {
-      "snippet": "<${TM_SELECTED_TEXT}${0}>"
+      "snippet": "<${TM_SELECTED_TEXT}$0>"
     }
   },
   {
-    "key": "ctrl+`",
+    "key": "ctrl+s",
     "command": "editor.action.insertSnippet",
     "when": "editorTextFocus",
     "args": {
-      "snippet": "`${TM_SELECTED_TEXT}${0}`"
+      "snippet": "std::$0"
     }
-  },
-  {
-    "key": "cmd+alt+B",
-    "command": "workbench.action.tasks.runTask",
-    "when": "editorLangId != latex",
   }
 ]

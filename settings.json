@@ -1,12 +1,16 @@
 {
+  "[plaintext]": {
+    "editor.quickSuggestions": false,
+    "editor.wordWrap": "on",
+  },
+  "editor.rulers": [
+    80,
+  ],
   "workbench.colorCustomizations": {
     "statusBar.background": "#101010",
     "editor.selectionBackground": "#503010",
     "minimap.selectionHighlight": "#503010",
   },
-  "editor.rulers": [
-    80,
-  ],
   "editor.detectIndentation": false,
   "editor.fontSize": 13.5,
   "editor.formatOnSave": true,
@@ -16,35 +20,31 @@
   "editor.suggestSelection": "recentlyUsed",
   "editor.tabSize": 2,
   "editor.trimAutoWhitespace": false,
+  "editor.wordSeparators": "./\\()\"'-:,.;<>~!@#$%^&*|+=[]{}`~?．。，、「」『』【】（）［］｛｝てにをはがのともへでや",
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "explorer.sortOrder": "type",
+  "extensions.ignoreRecommendations": true,
   "files.autoSave": "onFocusChange",
-  "files.defaultLanguage": "${activeEditorLanguage}",
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,
+  "git.confirmSync": false,
   "terminal.integrated.copyOnSelection": true,
   "terminal.integrated.rendererType": "dom",
   "terminal.integrated.rightClickBehavior": "copyPaste",
   "workbench.editor.limit.enabled": true,
+  "workbench.editor.untitled.labelFormat": "name",
   "workbench.fontAliasing": "antialiased",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.settings.editor": "json",
   "workbench.settings.useSplitJSON": true,
   "workbench.startupEditor": "none",
   // extensions
-  "extensions.ignoreRecommendations": true,
-  "git.confirmSync": false,
   "C_Cpp.updateChannel": "Default",
   "todo-tree.highlights.defaultHighlight": {
     "foreground": "black",
     "background": "yellow",
     "iconColour": "yellow",
   },
-  // experimental
-  "[plaintext]": {
-    "editor.quickSuggestions": false,
-    "editor.wordWrap": "on",
-  }
 }

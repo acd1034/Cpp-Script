@@ -1,8 +1,8 @@
 {
   "task.autoDetect": "off",
-  // "task.quickOpen.history": 0,
+  // extensions
   "C_Cpp.intelliSenseEngineFallback": "Enabled",
-  "files.defaultLanguage": "cpp",
+  "C_Cpp.suggestSnippets": false,
   "files.associations": {
     "__bit_reference": "cpp",
     "__config": "cpp",
@@ -23,6 +23,7 @@
     "__tuple": "cpp",
     "__undef_macros": "cpp",
     ".clang-format": "yaml",
+    ".clang-tidy": "yaml",
     "*.tcc": "cpp",
     "algorithm": "cpp",
     "any": "cpp",
@@ -38,6 +39,7 @@
     "clocale": "cpp",
     "cmath": "cpp",
     "codecvt": "cpp",
+    "compare": "cpp",
     "complex": "cpp",
     "condition_variable": "cpp",
     "coroutine": "cpp",

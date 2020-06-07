@@ -1,11 +1,21 @@
 {
+  // https://code.visualstudio.com/docs/editor/userdefinedsnippets
   "main": {
     "prefix": "main",
     "body": [
       "#include <iostream>",
-      "int main(){",
+      "int main() {",
       "  $0",
       "}",
+      ""
+    ]
+  },
+  "struct": {
+    "prefix": "struct",
+    "body": [
+      "struct $1 {",
+      "  $0",
+      "};",
       ""
     ]
   },
@@ -16,6 +26,10 @@
   "temp": {
     "prefix": "temp",
     "body": "template <typename T$0>"
+  },
+  "lambda": {
+    "prefix": "lambda",
+    "body": "[](${1:const auto&} x){ return $2; }"
   },
   "enable": {
     "prefix": "enable",
