@@ -19,7 +19,7 @@
     },
     {
       "label": "g++ Debug",
-      "command": "g++-9",
+      "command": "g++-10",
       "args": [
         "${file}",
         "-g",
