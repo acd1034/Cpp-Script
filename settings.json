@@ -1,26 +1,13 @@
 {
-  "[plaintext]": {
-    "editor.quickSuggestions": false,
-    "editor.wordWrap": "on",
-  },
-  "editor.rulers": [
-    80,
-  ],
-  "workbench.colorCustomizations": {
-    "statusBar.background": "#101010",
-    "editor.selectionBackground": "#503010",
-    "minimap.selectionHighlight": "#503010",
-  },
   "editor.detectIndentation": false,
   "editor.fontSize": 13.5,
   "editor.formatOnSave": true,
   "editor.minimap.renderCharacters": false,
   "editor.multiCursorModifier": "ctrlCmd",
   "editor.renderWhitespace": "boundary",
-  "editor.suggestSelection": "recentlyUsed",
   "editor.tabSize": 2,
   "editor.trimAutoWhitespace": false,
-  "editor.wordSeparators": "./\\()\"'-:,.;<>~!@#$%^&*|+=[]{}`~?．。，、「」『』【】（）［］｛｝てにをはがのともへでや",
+  "editor.wordSeparators": "./\\()\"'-:,.;<>~!@#$%^&*|+=[]{}`~?。、．，・「」『』【】（）［］｛｝てにをはがのともへでや",
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "explorer.sortOrder": "type",
@@ -36,15 +23,43 @@
   "workbench.editor.limit.enabled": true,
   "workbench.editor.untitled.labelFormat": "name",
   "workbench.fontAliasing": "antialiased",
-  "workbench.iconTheme": "material-icon-theme",
   "workbench.settings.editor": "json",
   "workbench.settings.useSplitJSON": true,
   "workbench.startupEditor": "none",
   // extensions
   "C_Cpp.updateChannel": "Default",
+  "editor.suggestSelection": "first",
+  "python.languageServer": "Pylance",
+  "python.showStartPage": false,
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  // brackets
+  "[plaintext]": {
+    "editor.suggest.showWords": false,
+    "editor.wordWrap": "on",
+  },
+  "editor.rulers": [
+    80,
+  ],
   "todo-tree.highlights.defaultHighlight": {
     "foreground": "black",
     "background": "yellow",
     "iconColour": "yellow",
   },
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.colorTheme": "GitHub Dark",
+  "workbench.colorCustomizations": {
+    "[Default Dark+]": {
+      "editor.selectionBackground": "#503010",
+      "minimap.selectionHighlight": "#503010",
+      "statusBar.background": "#101010",
+    },
+    "[GitHub Dark]": {
+      "editor.background": "#202020",
+      "tab.activeBackground": "#202020",
+      "statusBar.background": "#101010",
+      "editor.selectionBackground": "#3a2a20",
+      "minimap.selectionHighlight": "#3a2a20",
+    },
+  },
+  "window.zoomLevel": 0,
 }

@@ -38,5 +38,9 @@
   "senable": {
     "prefix": "senable",
     "body": "std::enable_if_t<$0, std::nullptr_t> = nullptr"
-  }
+  },
+  "adl": {
+    "prefix": "ADL",
+    "body": "using std::begin, std::end; // for ADL"
+  },
 }

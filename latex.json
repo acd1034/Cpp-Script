@@ -1,0 +1,73 @@
+{
+  // Place your snippets for tex here. Each snippet is defined under a snippet name and has a prefix, body and
+  // description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+  // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the
+  // same ids are connected.
+  // Example:
+  // "Print to console": {
+  //   "prefix": "log",
+  //   "body": [
+  //     "console.log('$1');",
+  //     "$2"
+  //   ],
+  //   "description": "Log output to console"
+  // }
+  "description": {
+    "prefix": "BDE",
+    "body": [
+      "\\begin{description}",
+      "  \\item[$1] $0",
+      "\\end{description}",
+    ],
+  },
+  "graphics": {
+    "prefix": "graphics",
+    "body": "\\includegraphics[width=$1,page=1]{${0:file}}",
+  },
+  "my figure": {
+    "prefix": "fig",
+    "body": "\\myfig{label}{きゃぷしょん。}{file.pdf}{page}",
+  },
+  // "my empty figure": {
+  //   "prefix": "emptyfig",
+  //   "body": "\\myemptyfig{label}{caption}"
+  // },
+  "my table": {
+    "prefix": "tab",
+    "body": [
+      "\\begin{mytab}{label}{きゃぷしょん。}{lcr}",
+      "  ",
+      "\\end{mytab}"
+    ]
+  },
+  "my csv table": {
+    "prefix": "csvtab",
+    "body": "\\mycsvtab{label}{きゃぷしょん。}{lcr}{file.csv}{head}{body}"
+  },
+  "my sc": {
+    "prefix": "sc",
+    "body": "\\mysc{label}{きゃぷしょん。}{sc/file}{lang}"
+  },
+  // 二文字フォント命令: rm bf it sf sl sc tt gt mc
+  "texttt": {
+    "prefix": "tt",
+    "body": "\\texttt{$0}"
+  },
+  // 数式: mathrm mathbf mathit mathsf bm mathbb mathcal mathscr mathfrak
+  "mathrm": {
+    "prefix": "rm",
+    "body": "\\mathrm{$0}"
+  },
+  "mathbb": {
+    "prefix": "bb",
+    "body": "\\mathbb{$0}"
+  },
+  "mathcal": {
+    "prefix": "cal",
+    "body": "\\mathcal{$0}"
+  },
+  "vb": {
+    "prefix": "vb",
+    "body": "\\vb*{$0}"
+  },
+}
