@@ -1,6 +1,6 @@
 # https://clang.llvm.org/docs/ClangFormatStyleOptions.html
 # generals
-ColumnLimit: 80
+ColumnLimit: 100
 ContinuationIndentWidth: 2
 IndentWidth: 2
 ReflowComments: false
@@ -18,15 +18,15 @@ PointerAlignment: Left
 
 CommentPragmas: '^ NO-FORMAT:'
 IncludeCategories:
+  # Headers in <> from specific external libraries.
+  - Regex:    '<(boost|gsl)\/([A-Za-z0-9.\/-_])+>'
+    Priority: 2
   # Headers in <> without extension.
   - Regex:    '<([A-Za-z0-9\/-_])+>'
     Priority: 1
-  # Headers in <> from specific external libraries.
-  - Regex:    '<(boost|catch2|gsl)\/([A-Za-z0-9.\/-_])+>'
-    Priority: 2
   # Headers in <> with extension.
   - Regex:    '<([A-Za-z0-9.\/-_])+>'
     Priority: 3
-  # Headers in "" with extension.
+  # Headers in "" with/without extension.
   - Regex:    '"([A-Za-z0-9.\/-_])+"'
     Priority: 4

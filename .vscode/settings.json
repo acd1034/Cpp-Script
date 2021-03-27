@@ -78,6 +78,7 @@
     "memory": "cpp",
     "mutex": "cpp",
     "new": "cpp",
+    "numbers": "cpp",
     "numeric": "cpp",
     "optional": "cpp",
     "ostream": "cpp",
@@ -109,5 +110,12 @@
     "variant": "cpp",
     "vector": "cpp",
     "version": "cpp",
+    // gsl
+    "gsl_algorithm": "cpp",
+    "gsl_byte": "cpp",
+    "gsl_util": "cpp",
+    "gsl": "cpp",
+    "multi_span": "cpp",
+    "pointers": "cpp",
   }
 }

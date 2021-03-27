@@ -72,24 +72,18 @@
     },
     {
       "label": "Clean",
-      "command": "rm",
-      "args": [
-        "-r",
-        "*"
-      ],
+      "command": "rm -r *",
     },
     {
       "label": "Doxygen",
-      "command": "doxygen",
-      "args": [
-        "Doxyfile",
-        "&&",
-        "open",
-        "./docs/index.html"
-      ],
+      "command": "doxygen Doxyfile && open ./docs/index.html",
       "options": {
         "cwd": "${workspaceFolder}"
       },
+    },
+    {
+      "label": "Format",
+      "command": "clang-format -i -style=file ${file}",
     },
   ],
   "type": "shell",
