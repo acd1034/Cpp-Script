@@ -70,8 +70,8 @@
     "body": "noexcept(noexcept(${1:expr}))->decltype((${1:expr})) { return ${1:expr}; }"
   },
   // doxygen comment
-  "file": {
-    "prefix": "file",
+  "hfile": {
+    "prefix": "hfile",
     "body": "/// @file $1"
   },
   "brief": {
@@ -95,15 +95,14 @@
     "body": "@return expects: "
   },
   // convenience
-  "io_range": {
-    "prefix": "io_range",
+  "ranges_io": {
+    "prefix": "ranges_io",
     "body": [
       "template <class CharT, class Traits, class R>",
-      "auto& operator<<(std: :basic_ostream<CharT, Traits>& os, const R& r) {",
+      "auto& operator<<(std::basic_ostream<CharT, Traits>& os, const R& r) {",
       "  const char* dlm = \"\";",
-      "  for (const auto& value : r) {",
-      "    os << dlm << value;",
-      "    dlm = \" \";",
+      "  for (const auto& x : r) {",
+      "    os << std::exchange(dlm, \" \") << x;",
       "  }",
       "  return os;",
       "}",

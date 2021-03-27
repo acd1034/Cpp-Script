@@ -1,8 +1,6 @@
 # https://clang.llvm.org/docs/ClangFormatStyleOptions.html
 # generals
-BreakBeforeBraces: Attach
-ColumnLimit: 100
-CommentPragmas: '^ comment: '
+ColumnLimit: 80
 ContinuationIndentWidth: 2
 IndentWidth: 2
 ReflowComments: false
@@ -11,19 +9,24 @@ UseTab: Never
 # language core
 AlwaysBreakTemplateDeclarations: true
 BreakBeforeBinaryOperators: NonAssignment
+BreakBeforeBraces: Attach
 BreakConstructorInitializers: BeforeColon
 ConstructorInitializerIndentWidth: 2
 FixNamespaceComments: true
 NamespaceIndentation: All
 PointerAlignment: Left
 
-# for short description
-AlignConsecutiveAssignments: true
-AlignTrailingComments: true
-AllowAllParametersOfDeclarationOnNextLine: true
-AllowShortBlocksOnASingleLine: true
-AllowShortCaseLabelsOnASingleLine: true
-AllowShortFunctionsOnASingleLine: All
-AllowShortIfStatementsOnASingleLine: true
-AllowShortLoopsOnASingleLine: true
-ConstructorInitializerAllOnOneLineOrOnePerLine: true
+CommentPragmas: '^ NO-FORMAT:'
+IncludeCategories:
+  # Headers in <> without extension.
+  - Regex:    '<([A-Za-z0-9\/-_])+>'
+    Priority: 1
+  # Headers in <> from specific external libraries.
+  - Regex:    '<(boost|catch2|gsl)\/([A-Za-z0-9.\/-_])+>'
+    Priority: 2
+  # Headers in <> with extension.
+  - Regex:    '<([A-Za-z0-9.\/-_])+>'
+    Priority: 3
+  # Headers in "" with extension.
+  - Regex:    '"([A-Za-z0-9.\/-_])+"'
+    Priority: 4

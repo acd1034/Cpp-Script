@@ -33,10 +33,6 @@
   "python.showStartPage": false,
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   // brackets
-  "[plaintext]": {
-    "editor.suggest.showWords": false,
-    "editor.wordWrap": "on",
-  },
   "editor.rulers": [
     80,
   ],
@@ -61,5 +57,10 @@
       "minimap.selectionHighlight": "#3a2a20",
     },
   },
-  "window.zoomLevel": 0,
+  "workbench.editorAssociations": [
+    {
+      "viewType": "jupyter.notebook.ipynb",
+      "filenamePattern": "*.ipynb"
+    }
+  ],
 }
