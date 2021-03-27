@@ -11,7 +11,7 @@
       "program": "${workspaceFolder}/build/a.out",
       "args": [],
       "cwd": "${workspaceFolder}/build",
-      // "preLaunchTask": "clang++ Debug",
+      // "preLaunchTask": "clang++ Debug Build",
     }
   ]
 }
