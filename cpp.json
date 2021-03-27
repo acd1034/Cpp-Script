@@ -1,5 +1,6 @@
 {
   // https://code.visualstudio.com/docs/editor/userdefinedsnippets
+  // generals
   "main": {
     "prefix": "main",
     "body": [
@@ -19,6 +20,23 @@
       ""
     ]
   },
+  "namespace": {
+    "prefix": "namespace",
+    "body": [
+      "namespace $1 {",
+      "  $0",
+      "} // namespace $1"
+    ]
+  },
+  "for": {
+    "prefix": "for",
+    "body": "for (${1:std::size_t} ${2:i}=0; ${2:i}<${3:length}; ++${2:i}) "
+  },
+  "forrange": {
+    "prefix": "forrange",
+    "body": "for (${1:const auto}& ${2:x}:${3:r}) "
+  },
+  // user-defined
   "cout": {
     "prefix": "cout",
     "body": "std::cout << $0 << std::endl;"
@@ -29,18 +47,66 @@
   },
   "lambda": {
     "prefix": "lambda",
-    "body": "[](${1:const auto&} x){ return $2; }"
+    "body": "[](${1:const auto}& ${2:x}){ return $3; }"
+  },
+  "lambda2": {
+    "prefix": "lambda2",
+    "body": "[](${1:const auto}& ${2:x}, ${1:const auto}& ${3:y}){ return $4; }"
   },
   "enable": {
     "prefix": "enable",
-    "body": "enable_if_t<$0> = nullptr"
+    "body": "enable_if_t<$1> = nullptr"
   },
   "senable": {
     "prefix": "senable",
-    "body": "std::enable_if_t<$0, std::nullptr_t> = nullptr"
+    "body": "std::enable_if_t<$1, std::nullptr_t> = nullptr"
   },
-  "adl": {
+  "ADL": {
     "prefix": "ADL",
     "body": "using std::begin, std::end; // for ADL"
   },
+  "abbrev": {
+    "prefix": "abbrev",
+    "body": "noexcept(noexcept(${1:expr}))->decltype((${1:expr})) { return ${1:expr}; }"
+  },
+  // doxygen comment
+  "file": {
+    "prefix": "file",
+    "body": "/// @file $1"
+  },
+  "brief": {
+    "prefix": "brief",
+    "body": [
+      "/**",
+      " * @brief $0",
+      " */"
+    ]
+  },
+  "param": {
+    "prefix": "param",
+    "body": "@param $1 ensures: "
+  },
+  "tparam": {
+    "prefix": "tparam",
+    "body": "@tparam $1 requires: "
+  },
+  "return": {
+    "prefix": "return",
+    "body": "@return expects: "
+  },
+  // convenience
+  "io_range": {
+    "prefix": "io_range",
+    "body": [
+      "template <class CharT, class Traits, class R>",
+      "auto& operator<<(std: :basic_ostream<CharT, Traits>& os, const R& r) {",
+      "  const char* dlm = \"\";",
+      "  for (const auto& value : r) {",
+      "    os << dlm << value;",
+      "    dlm = \" \";",
+      "  }",
+      "  return os;",
+      "}",
+    ]
+  }
 }
