@@ -1,6 +1,38 @@
-// C++ includes used for precompiling -*- C++ -*-
 // https://github.com/gcc-mirror/gcc/blob/master/libstdc%2B%2B-v3/include/precompiled/stdc%2B%2B.h
+// C
+#ifndef _GLIBCXX_NO_ASSERT
+#include <cassert>
+#endif
+#include <cctype>
+#include <cerrno>
+#include <cfloat>
+#include <ciso646>
+#include <climits>
+#include <clocale>
+#include <cmath>
+#include <csetjmp>
+#include <csignal>
+#include <cstdarg>
+#include <cstddef>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
+#include <ctime>
+#include <cwchar>
+#include <cwctype>
 
+#if __cplusplus >= 201103L
+#include <ccomplex>
+#include <cfenv>
+#include <cinttypes>
+// #include <cstdalign>
+#include <cstdbool>
+#include <cstdint>
+#include <ctgmath>
+// #include <cuchar>
+#endif
+
+// C++
 #include <algorithm>
 #include <bitset>
 #include <complex>
@@ -36,36 +68,36 @@
 
 #if __cplusplus >= 201103L
 #include <array>
-// #include <atomic>
+#include <atomic>
 #include <chrono>
-// #include <codecvt> // deprecated in C++17
-// #include <condition_variable>
+#include <codecvt>
+#include <condition_variable>
 #include <forward_list>
-// #include <future>
+#include <future>
 #include <initializer_list>
-// #include <mutex>
+#include <mutex>
 #include <random>
 #include <ratio>
-// #include <regex>
-// #include <scoped_allocator>
-// #include <system_error>
-// #include <thread>
+#include <regex>
+#include <scoped_allocator>
+#include <system_error>
+#include <thread>
 #include <tuple>
 #include <type_traits>
-// #include <typeindex>
+#include <typeindex>
 #include <unordered_map>
 #include <unordered_set>
 #endif
 
-// #if __cplusplus >= 201402L
-// #include <shared_mutex>
-// #endif
+#if __cplusplus >= 201402L
+#include <shared_mutex>
+#endif
 
 #if __cplusplus >= 201703L
 #include <any>
-// #include <charconv>
+#include <charconv>
 // #include <execution>
-// #include <filesystem>
+#include <filesystem>
 // #include <memory_resource>
 #include <optional>
 #include <string_view>
@@ -73,11 +105,18 @@
 #endif
 
 #if __cplusplus > 201703L
+// #include <barrier>
 #include <bit>
 #include <compare>
 // #include <concepts>
+#if __cpp_impl_coroutine
+#include <coroutine>
+#endif
+// #include <latch>
 // #include <numbers>
 // #include <ranges>
+// #include <semaphore>
+// #include <source_location>
 #include <span>
 // #include <stop_token>
 // #include <syncstream>
