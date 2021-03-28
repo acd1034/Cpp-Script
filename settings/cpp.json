@@ -16,8 +16,7 @@
     "body": [
       "struct $1 {",
       "  $0",
-      "};",
-      ""
+      "}; // namespace $1"
     ]
   },
   "namespace": {
@@ -69,10 +68,26 @@
     "prefix": "abbrev",
     "body": "noexcept(noexcept(${1:expr}))->decltype((${1:expr})) { return ${1:expr}; }"
   },
+  "ranges_os": {
+    "prefix": "ranges_os",
+    "body": [
+      "template <class CharT, class Traits, class R>",
+      "auto& operator<<(std::basic_ostream<CharT, Traits>& os, const R& r) {",
+      "  const char* dlm = \"\";",
+      "  for (const auto& x : r) {",
+      "    os << std::exchange(dlm, \" \") << x;",
+      "  }",
+      "  return os;",
+      "}"
+    ]
+  },
   // doxygen comment
   "hfile": {
     "prefix": "hfile",
-    "body": "/// @file $1"
+    "body": [
+      "/// @file $1",
+      "#pragma once"
+    ]
   },
   "brief": {
     "prefix": "brief",
@@ -93,19 +108,5 @@
   "return": {
     "prefix": "return",
     "body": "@return expects: "
-  },
-  // convenience
-  "ranges_io": {
-    "prefix": "ranges_io",
-    "body": [
-      "template <class CharT, class Traits, class R>",
-      "auto& operator<<(std::basic_ostream<CharT, Traits>& os, const R& r) {",
-      "  const char* dlm = \"\";",
-      "  for (const auto& x : r) {",
-      "    os << std::exchange(dlm, \" \") << x;",
-      "  }",
-      "  return os;",
-      "}",
-    ]
   }
 }

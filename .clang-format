@@ -3,10 +3,11 @@
 ColumnLimit: 100
 ContinuationIndentWidth: 2
 IndentWidth: 2
-ReflowComments: false
 UseTab: Never
 
 # language core
+AlignConsecutiveAssignments: true
+AlignTrailingComments: true
 AlwaysBreakTemplateDeclarations: true
 BreakBeforeBinaryOperators: NonAssignment
 BreakBeforeBraces: Attach
