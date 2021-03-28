@@ -1,4 +1,5 @@
 #include <iterator>
+
 struct MyIterator {
 public:
   // type alias
@@ -15,9 +16,9 @@ private:
 
 public:
   // ctor
-  constexpr MyIterator() noexcept = default;
+  constexpr MyIterator() noexcept                  = default;
   constexpr MyIterator(const MyIterator&) noexcept = default;
-  // assign
+  // assignment
   constexpr MyIterator& operator=(const MyIterator&) noexcept = default;
   // operator
   constexpr pointer operator->() const noexcept { return /* implementation */; }
@@ -35,6 +36,8 @@ public:
       return (/* implementation */->*u)(std::forward<decltype(args)>(args)...);
     };
   }
+  constexpr reference operator[](difference_type n) const noexcept { return /* implementation */; }
+  // arithmetic
   constexpr MyIterator& operator++() noexcept {
     /* implementation */
     return *this;
@@ -51,19 +54,18 @@ public:
     /* implementation */
     return *this;
   }
-  constexpr reference operator[](difference_type n) const noexcept { return /* implementation */; }
-  // friend
-  constexpr friend difference_type operator-(const MyIterator& x, const MyIterator& y) noexcept {
+  friend constexpr difference_type operator-(const MyIterator& x, const MyIterator& y) noexcept {
     return /* implementation */;
   }
-  constexpr friend bool operator==(const MyIterator& x, const MyIterator& y) noexcept {
+  // compare
+  friend constexpr bool operator==(const MyIterator& x, const MyIterator& y) noexcept {
     return /* implementation */;
   }
-  constexpr friend bool operator<(const MyIterator& x, const MyIterator& y) noexcept {
+  friend constexpr bool operator<(const MyIterator& x, const MyIterator& y) noexcept {
     return /* implementation */;
   }
 
-  // boilerplate
+  // boilerplate - arithmetic
   constexpr MyIterator operator++(int) noexcept(noexcept(++*this)) {
     MyIterator tmp{*this};
     ++*this;
@@ -74,31 +76,32 @@ public:
     --*this;
     return tmp;
   }
-  constexpr friend MyIterator
+  friend constexpr MyIterator
   operator+(MyIterator x, typename MyIterator::difference_type n) noexcept(noexcept(x += n)) {
     return x += n;
   }
-  constexpr friend MyIterator operator+(typename MyIterator::difference_type n,
+  friend constexpr MyIterator operator+(typename MyIterator::difference_type n,
                                         MyIterator x) noexcept(noexcept(x += n)) {
     return x += n;
   }
-  constexpr friend MyIterator
+  friend constexpr MyIterator
   operator-(MyIterator x, typename MyIterator::difference_type n) noexcept(noexcept(x -= n)) {
     return x -= n;
   }
-  constexpr friend bool operator!=(const MyIterator& x,
+  // boilerplate - compare
+  friend constexpr bool operator!=(const MyIterator& x,
                                    const MyIterator& y) noexcept(noexcept(x == y)) {
     return !(x == y);
   }
-  constexpr friend bool operator>(const MyIterator& x,
+  friend constexpr bool operator>(const MyIterator& x,
                                   const MyIterator& y) noexcept(noexcept(y < x)) {
     return y < x;
   }
-  constexpr friend bool operator<=(const MyIterator& x,
+  friend constexpr bool operator<=(const MyIterator& x,
                                    const MyIterator& y) noexcept(noexcept(y < x)) {
     return !(y < x);
   }
-  constexpr friend bool operator>=(const MyIterator& x,
+  friend constexpr bool operator>=(const MyIterator& x,
                                    const MyIterator& y) noexcept(noexcept(x < y)) {
     return !(x < y);
   }
