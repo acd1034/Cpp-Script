@@ -108,5 +108,12 @@
   "return": {
     "prefix": "return",
     "body": "@return expects: "
+  },
+  "undoc": {
+    "prefix": "undoc",
+    "body": [
+      "/// @cond",
+      "/// @endcond"
+    ]
   }
 }
