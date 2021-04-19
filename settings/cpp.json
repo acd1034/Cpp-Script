@@ -68,6 +68,10 @@
     "prefix": "abbrev",
     "body": "noexcept(noexcept(${1:expr}))->decltype((${1:expr})) { return ${1:expr}; }"
   },
+  "unused": {
+    "prefix": "unused",
+    "body": "[[maybe_unused]] friend const virtual explicit ${0:auto}"
+  },
   "ranges_os": {
     "prefix": "ranges_os",
     "body": [
@@ -114,6 +118,13 @@
     "body": [
       "/// @cond",
       "/// @endcond"
+    ]
+  },
+  "unformat": {
+    "prefix": "unformat",
+    "body": [
+      "// clang-format off",
+      "// clang-format on"
     ]
   }
 }
