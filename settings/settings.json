@@ -20,18 +20,18 @@
   "terminal.integrated.copyOnSelection": true,
   "terminal.integrated.rendererType": "dom",
   "terminal.integrated.rightClickBehavior": "copyPaste",
+  "workbench.colorTheme": "GitHub Dark",
   "workbench.editor.limit.enabled": true,
   "workbench.editor.untitled.labelFormat": "name",
   "workbench.fontAliasing": "antialiased",
+  "workbench.iconTheme": "material-icon-theme",
   "workbench.settings.editor": "json",
   "workbench.settings.useSplitJSON": true,
   "workbench.startupEditor": "none",
   // extensions
   "C_Cpp.updateChannel": "Default",
-  "editor.suggestSelection": "first",
   "python.languageServer": "Pylance",
   "python.showStartPage": false,
-  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   // brackets
   "editor.rulers": [
     80,
@@ -41,8 +41,6 @@
     "background": "yellow",
     "iconColour": "yellow",
   },
-  "workbench.iconTheme": "material-icon-theme",
-  "workbench.colorTheme": "GitHub Dark",
   "workbench.colorCustomizations": {
     "[Default Dark+]": {
       "editor.selectionBackground": "#503010",
