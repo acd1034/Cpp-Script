@@ -1,0 +1,123 @@
+#include <algorithm>
+#include <iostream>
+#include <random>
+#include <string_view>
+#include <vector>
+
+int main() {
+  std::vector<std::string_view> sentences{
+    // clang-format off
+    // examword 1
+    "Describe a place you have never been to but would like to go someday.",
+    "If your friends from another country are going to visit your country, where would you suggest them to go?",
+    "What are the significant features of a cafe or restaurant you like.",
+    "Do you think we should preserve the old building in the city?",
+    "Describe a place, for example, a seashore park in your city where you often visit.",
+    "Describe an important gift you have, tell us why it is important.",
+    "Have you had any work experiences before? Describe any of your jobs.",
+    "Describe the most impressive moment in your life.",
+    "How do you acquire knowledge? Give us some examples.",
+    "Do you prefer to choose a profession that requires you to work in a group?",
+    "Is there any invention that has changed your life most recently?",
+    "Which study method do you prefer, online courses or traditional classroom?",
+    "Describe a painting you have seen before. Why do you like it or dislike it?",
+    "What kind of friends do you like? Tell the main reason.",
+    "What do you like to read in your free time? For example, magazines, newspapers, or books.",
+    "Do you like to live with roommates or live alone?",
+    "Someone focuses on one job throughout life; others like to change from one position to another. Which one do you think is better?",
+    "Some people think life in modern times is easier than our grandparents, do you agree with it?",
+    "Do you agree that childhood is the happiest time in life?",
+    "How do you think about university education? Some people think it's important, and some don't.",
+    "Describe one of your favorite songs or one of your favorite movies.",
+    // examword 2
+    "Is there any invention that has changed your life most recently?",
+    "Do you like to go to an art museum alone or with friends?",
+    "Should graduate students teach low-level courses or be assistants to professors?",
+    "Do you think it is a good idea to select government leaders from the masses and ordinary residents?",
+    "Do you agree or disagree with the following statement? People should spend time watching the news from other countries.",
+    "Do you agree or disagree with the following statement? Good luck is as important as work hard in achieving success.",
+    "Do you agree or disagree with the following statement? Some people think it is better to read or watch negative news than positive news.",
+    "Do you agree or disagree with the following statement? Schools should record large lectures and upload them to the school website for students to watch.",
+    "Should the school spend the same time teaching our own country's history as world history?",
+    "Some people think that risk-taking activists such as rock-climbing and skydiving require a lot of bravery, while others think this is not brave but simply foolish. Which view do you agree with and explain why?",
+    "Which company do you prefer to work with, a company in which you work independently, or a company with a tutor to help you?",
+    "Some people want to change their appearance, even by surgery. Do you agree or disagree?",
+    "Do you agree or disagree with the following statement? Friends should be able to have different opinions and maintain a good relationship.",
+    "If you are going to travel to a new country for a week, do you prefer to travel to a major city in the country or to several different places?",
+    "Do you prefer to work in a controlled and strict company or a high-paying company?",
+    "If the school decided to close the computer lab because all students have their own laptops. Do you agree or disagree with the decision?",
+    "Some people think historical sites should be open to the general public, but others think historical sites should only be open to experts and researchers. Which do you think is better?",
+    "Some people think that parents should allow their children to make mistakes, while others think they should not. With which view do you agree?",
+    "Imagine that two different universities have accepted you. One university is well known for its excellent academic program, but it is expensive. In contrast, another is less well-known but has offered you a scholarship. Which university would you prefer and explain why?",
+    "Do you agree or disagree with the following statement? It is not acceptable to interrupt people when they are talking.",
+    "When it comes to buying daily necessities, some people prefer to shop in grocery stores now and then to gather all the things they need, while others prefer to go to a supermarket and buy everything all at once. Which do you prefer and why?",
+    "Do you agree or disagree with the following statement? It is impolite to take pictures of strangers without their permission.",
+    "Do you agree or disagree with this school's policy? Parents are not allowed to check their children's grades without permission from their children.",
+    "Do you agree or disagree with the following statement? Employees shouldn't send personal texts or emails during work hours.",
+    "Do you agree or disagree with the following statement? Children at early age should learn independent living skills. Use specific reasons to support your answer.",
+    "What kind of background is better for government leaders? Law, military, or business.",
+    "More and more people tend to post their personal information online. Please discuss the advantages and disadvantages of it?",
+    "Your friend has a bicycle, but now he wants to buy a car, so he will take a part-time job to earn money. What is your opinion?",
+    "Some people prefer to do difficult tasks at first before finishing easy ones, while others prefer to do easy tasks before completing difficult ones. Which one do you prefer? Please use specific reasons and examples to support your response.",
+    "Do you agree or disagree with the following statement? You have to be completely honest with your close friends.",
+    "Some believe that students should choose what courses to study by themself, others believe that students' professors should make the decision for students. Which opinion do you support and why?",
+    "Besides getting jobs after graduation, what else benefits do you think students can get from a college education?",
+    "Some people sell the gifts their friends gave them or give the gifts to others. Do you think this is a good idea and Why?",
+    "Is it better to praise a good behavior than criticize a bad one?",
+    "Do you agree or disagree with the following statement? Universities should require first-year and second-year students to live on campus.",
+    "You and your friends have a misunderstanding. Do you prefer to talk about it in a public place or a private place?",
+    "If you will choose a new roommate, which of the following qualities do you think is the best: quietness, friendliness, cleanliness?",
+    "Some people think we should positively act when dealing with difficult situations in our lives. Do you agree with it?",
+    "Your university decided to let students open their own Cafe. Please discuss the advantages and disadvantages of this decision.",
+    "Some like to play board games or card games, while others like to play video games by using phones or computers. Which do you prefer?",
+    "Where do you like to study? At home, in a library, or at a coffee shop.",
+    "Do you agree or disagree with the following statement? Video games are completely worthless to children.",
+    "Which way do you choose to fulfill the final exam? Research paper, oral exam, or paper examination.",
+    "Your university is going to give out a scholarship of 5000 dollars. Who do you think should receive the scholarship, students with high academic performance, or students who need financial aids?",
+    "Do you agree or disagree with the following statement? We can judge a person by the appearance at first glance.",
+    "We should be humor or serious attitude when facing difficulties?",
+    "Do you choose to send your child to school or homeschooling?",
+    "Which of the following is the most important for the recruitment of new employees? Level of education degree, work experience, and interview performance.",
+    "Would you prefer to decorate your room with objects like paintings and pictures or leave the wall blank and simple?",
+    "Do you think it is better to make friends at similar ages, or different ages?",
+    "A library is a place for quiet reading or a place to meet and communicate. Which would you choose?",
+    "What is the most common mistakes that parents make in the process of raising kids?",
+    "Do you agree or disagree with the following statement? Parents should not let children choose jobs that are difficult to become successful.",
+    "If your good friend plans to keep a pet, what advice will you give him?",
+    "Your friend wants to build up a restaurant. Please give some suggestions. Include specific reasons and details in your explanation.",
+    "Do you prefer to finish things early or wait until the deadline is almost there?",
+    "Instead of printing books in paper version, the university decides to release only an online version of textbooks. Discuss the advantages and disadvantages of this change.",
+    "Please discuss the advantages and disadvantages of being active on a social website?",
+    "Which of the three qualities is the most important for starting a business? Creative, being friendly and outgoing, and well-organized.",
+    "Parents should let their children deal with difficulties from an early age. Do you agree or disagree with it?",
+    "Do you agree or disagree with the following statement? The important business meeting should be face to face rather than using e-technology.",
+    "Should parents lead their children to watch TV, or children should choose shows by themselves?",
+    "Which one do you think is better to help do research: internet or academic books?",
+    "Do we should choose the major for job hunting or just for our interests?",
+    "Some people want to have a relaxed and unhurried life, do you agree with it?",
+    "In city development, should we keep old buildings or replace them with a new building?",
+    "Do you prefer to get advice from family and friends or learning through personal experience?",
+    "Do you agree or disagree with the following statement? Students should wear uniforms in school.",
+    "High salary job or top personal satisfying career, which is your choice?",
+    "A student should do a part-time job or summer intern. Do you agree or disagree with it?  ",
+    "Some people believe that we should give a hand in severe cases without hesitation; others argue that you should ensure not to cause new troubles.",
+    "Do you want to be a leader or to be a follower?",
+    "What is the most important invention of the last 100 years?",
+    "Should mobile phones be forbidden in some places?",
+    "Which is a common choice for your party: restaurant, cafe, or home?",
+    "What is the most efficient transportation in your country?",
+    "Should the government pay bills for museums?",
+    "Big city or small town, in which do you prefer to live?",
+    "Magazine, novel, poem, which do you prefer to read?",
+    // clang-format on
+  };
+  std::default_random_engine rng(std::random_device{}());
+  // std::uniform_int_distribution<std::size_t> dist(0, std::size(sentences) - 1);
+  while (true) {
+    std::shuffle(std::begin(sentences), std::end(sentences), rng);
+    for (const auto& x : sentences) {
+      std::cout << x << std::endl;
+      std::cin.ignore();
+    }
+  }
+}
