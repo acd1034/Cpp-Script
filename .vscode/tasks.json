@@ -86,6 +86,7 @@
       "command": "clang-format -i -style=file ${file}",
     },
   ],
+  // default
   "type": "shell",
   "options": {
     "cwd": "${workspaceFolder}/build"
