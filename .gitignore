@@ -8,6 +8,7 @@
 # .gitignoreが置いてあるディレクトリをカレントディレクトリとする相対パスで指定されるディレクトリを無視
 
 .DS_Store
-.vscode/ipch/
+.vscode/tasks.json
+.vscode/launch.json
 input
 build/

@@ -14,6 +14,21 @@
       "cppStandard": "c++20",
       "intelliSenseMode": "gcc-x64"
       // "intelliSenseMode": "clang-x64"
+    },
+    {
+      "name": "WSL",
+      "browse": {
+        "limitSymbolsToIncludedHeaders": true
+      },
+      "includePath": [
+        "${workspaceFolder}",
+        "${workspaceFolder}/include",
+        "/home/hirakida/vcpkg/installed/x64-linux/include"
+      ],
+      "cStandard": "c11",
+      "cppStandard": "c++20",
+      "intelliSenseMode": "gcc-x64"
+      // "intelliSenseMode": "clang-x64"
     }
   ],
   "version": 4
